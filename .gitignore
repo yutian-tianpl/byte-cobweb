@@ -55,3 +55,5 @@ fabric.properties
 /byte-cobweb.iml
 /example/example.iml
 /interceptor/interceptor.iml
+/example-com.tianpl.opcode.example.target.javaagent/example-com.tianpl.opcode.example.target.javaagent.iml
+/example-javaagent/example-javaagent.iml
