@@ -50,4 +50,9 @@
 4. 在manifest中指定PremainClass(比如Maven插件maven-jar-plugin可以完成此工作)
 ### How to run on target
 1. 将编译好的Jar包放到目标的项目的ClassPath中
-2. 在目标项目启动命令上附加-javaagent参数项，参数内容为agent.jar的路径
+2. 在目标项目启动命令上附加-javaagent参数项，参数内容为agentJar的路径
+3. 参数示例:-javaagent:/Users/tianyu/Desktop/example-javaagent-1.0-SNAPSHOT.jar=NAME_START_WITH;com.tianpl.opcode.example.target
+4. agentJar所以依赖的当前的ClassPath中
+    - 单独管理agentJar的ClassPath
+    - 将agentJar打包成fatJar
+    - 目标项目中增加依赖

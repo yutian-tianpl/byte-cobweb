@@ -11,5 +11,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="interceptor" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm:5.2" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm-util:5.2" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm-commons:5.2" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm-tree:5.2" level="project" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.6" level="project" />
   </component>
 </module>

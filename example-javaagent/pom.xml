@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>com.tianpl.opcode.cobweb</groupId>
-            <artifactId>example</artifactId>
+            <artifactId>example-target</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

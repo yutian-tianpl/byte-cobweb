@@ -6,6 +6,7 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodNode;
 
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,7 +49,10 @@ public class ExampleInterceptor extends Interceptor {
     @Override
     protected void doOnStart(Object source, Object[] arg, String executionId) {
         if (executionId != null) {
-            rtStart.get().put(executionId,System.currentTimeMillis());
+            Method method = (Method)source;
+            Long start = System.currentTimeMillis();
+            System.out.println(method.getName() + "-start:" + start);
+            rtStart.get().put(executionId,start);
         }
     }
 
@@ -65,10 +69,13 @@ public class ExampleInterceptor extends Interceptor {
     @Override
     protected void doOnFinish(Object source, Object result, String executionId) {
         if (executionId != null) {
+            Method method = (Method)source;
             Long start = rtStart.get().get(executionId);
             if (start != null) {
+                Long end = System.currentTimeMillis();
                 rtStart.get().remove(executionId);
-                System.out.println(System.currentTimeMillis() - start);
+                System.out.println(method.getName() + "-end:" + start);
+                System.out.println(method.getName() + "-spend:" + (end - start));
             }
         }
     }
