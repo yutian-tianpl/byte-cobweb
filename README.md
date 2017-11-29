@@ -3,9 +3,10 @@
 
 
 ## Overview
-基于ASM-tree API的字节码AOP
+基于ASM-tree API的字节码修改工具
  
 旨在快速构建基于ASM的Instrumentation方案
+
 
 ### Component
 1. Interceptor 
@@ -36,3 +37,17 @@
 	- 如何创建一个javaagent
 6. target-example
 	- 如何将一个javaagent应用到目标上
+	
+### When
+1. 现有的手段没有办法满足需求，字节码修改做为仅有的手段时
+2. 无侵入监控
+3. 构建Instrumentation
+
+### How to build instrumentation jar
+1. 创建Premain
+2. 实现ClassFileTransformer
+3. 实现Interceptor
+4. 在manifest中指定PremainClass(比如Maven插件maven-jar-plugin可以完成此工作)
+### How to run on target
+1. 将编译好的Jar包放到目标的项目的ClassPath中
+2. 在目标项目启动命令上附加-javaagent参数项，参数内容为agent.jar的路径
