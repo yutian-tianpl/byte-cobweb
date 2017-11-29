@@ -5,7 +5,8 @@ import org.objectweb.asm.Type;
 
 /**
  * An element matcher that checks an object's equality to another object.
- *
+ * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
  */
 @EqualsAndHashCode(callSuper = false)
 public class TypeNamedMatcher extends ConnectorMatcher.AbstractConnector<Type> {

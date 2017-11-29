@@ -6,6 +6,9 @@ import lombok.EqualsAndHashCode;
 import org.objectweb.asm.tree.MethodNode;
 
 /**
+ *
+ * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
  * An element matcher that checks an object's equality to another object.
  *
  */

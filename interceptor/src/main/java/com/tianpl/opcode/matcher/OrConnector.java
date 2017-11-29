@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
  * OrConnector
  *
  * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
  * @Date 17/11/27 17:43
  *
  * A disjunction matcher which only matches an element if both represented matchers constitute a match.

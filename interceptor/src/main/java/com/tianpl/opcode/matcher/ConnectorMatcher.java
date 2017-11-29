@@ -3,10 +3,11 @@ package com.tianpl.opcode.matcher;
 /**
  * ConnectorMatcher
  *
- * @Author yu.tian@tianpl.com
- * @Date 17/11/27 17:40
  * A junctions allows to chain different {@link Matcher}s in a readable manner.
  *
+ * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
+ * @Date 17/11/27 17:40
  * @param <S> The type of the object that is being matched.
  */
 public interface ConnectorMatcher<S> extends Matcher<S> {

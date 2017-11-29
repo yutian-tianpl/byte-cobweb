@@ -6,7 +6,8 @@ import lombok.EqualsAndHashCode;
 import org.objectweb.asm.tree.MethodNode;
 
 /**
- *
+ * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
  */
 @EqualsAndHashCode(callSuper = false)
 public class MethodNameContainsMatcher extends ConnectorMatcher.AbstractConnector<MethodNode> {

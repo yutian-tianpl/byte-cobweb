@@ -6,7 +6,11 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodNode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ExampleInterceptor extends Interceptor {
+    private static ThreadLocal<Map<String,Long>> rtStart = ThreadLocal.withInitial(HashMap::new);
     private ConnectorMatcher<Type> readBeforeMatcher;
     private ConnectorMatcher<ClassNode> readAfterMather;
     private ConnectorMatcher<MethodNode> methodMather;
@@ -35,19 +39,29 @@ public class ExampleInterceptor extends Interceptor {
 
     @Override
     protected void doOnStart(Object source, Object[] arg, String executionId) {
-
+        if (executionId != null) {
+            rtStart.get().put(executionId,System.currentTimeMillis());
+        }
     }
 
     @Override
     protected void doOnThrowableThrown(Object source, Throwable throwable, String executionId) {
+        System.out.println("doOnThrowableThrown");
     }
 
     @Override
     protected void doOnThrowableSurprise(Object source, Throwable throwable, String executionId) {
+        System.out.println("doOnThrowableThrown");
     }
 
     @Override
     protected void doOnFinish(Object source, Object result, String executionId) {
-
+        if (executionId != null) {
+            Long start = rtStart.get().get(executionId);
+            if (start != null) {
+                rtStart.get().remove(executionId);
+                System.out.println(System.currentTimeMillis() - start);
+            }
+        }
     }
 }

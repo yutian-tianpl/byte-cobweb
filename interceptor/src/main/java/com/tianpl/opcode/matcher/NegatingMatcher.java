@@ -4,7 +4,8 @@ import lombok.EqualsAndHashCode;
 
 /**
  * An element matcher that reverses the matching result of another matcher.
- *
+ * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
  * @param <T> The type of the matched entity.
  */
 @EqualsAndHashCode(callSuper = false)

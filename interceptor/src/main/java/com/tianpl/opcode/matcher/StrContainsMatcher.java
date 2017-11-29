@@ -5,6 +5,8 @@ import lombok.EqualsAndHashCode;
 /**
  * An element matcher that checks an object's equality to another object.
  *
+ * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
  */
 @EqualsAndHashCode(callSuper = false)
 public class StrContainsMatcher extends ConnectorMatcher.AbstractConnector<String> {

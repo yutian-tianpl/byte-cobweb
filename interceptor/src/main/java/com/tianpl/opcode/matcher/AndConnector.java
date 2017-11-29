@@ -4,11 +4,10 @@ import lombok.EqualsAndHashCode;
 /**
  * AndConnector
  *
- * @Author yu.tian@tianpl.com
- * @Date 17/11/27 17:42
- *
  * A conjunction matcher which only matches an element if both represented matchers constitute a match.
- *
+ * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
+ * @Date 17/11/27 17:42
  * @param <W> The type of the object that is being matched.
  */
 @EqualsAndHashCode(callSuper = false)

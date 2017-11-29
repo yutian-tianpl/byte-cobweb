@@ -9,6 +9,7 @@ import java.lang.annotation.Target;
  * ForExample
  *
  * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
  * @Date 17/11/29 10:09
  */
 @Target(ElementType.METHOD)

@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
  * AgentArgs
  *
  * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
+ *
  * @Date 17/11/15 18:22
  */
 public class AgentArgs {
@@ -31,7 +33,7 @@ public class AgentArgs {
                 "2.合法的参数数量为两个或者三个\n" +
                 "3.参数说明:\n" +
                 "3.2.参数一:必选，目标Class匹配规则，可选值：" + Arrays.stream(NameMatcherRule.values()).map(Enum::name).collect(Collectors.joining(",")) + "\n" +
-                "3.3.参数二:特殊必选，参数二为" + NameMatcherRule.NAME_ALL.name() + "时无此参数，此参数的值跟参数二关系密切";
+                "3.3.参数二:特殊必选，参数二为" + NameMatcherRule.NAME_ALL.name() + "时无此参数，此参数的值跟参数一关系密切";
     }
     private NameMatcherRule nameMatcherRule;
     private String matchRule;
