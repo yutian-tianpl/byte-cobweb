@@ -17,11 +17,12 @@
 			- 正常结束时执行
 			- 代码异常抛出时执行
 			- 代码未捕获异常抛出时执行
-	- Matcher配置
-		- matchBeforeReadClass
-		- matchAfterReadClass
-		- matchMethod
+	- Match规则
+		- matchBeforeReadClass ASM读取类文件读取后的匹配规则
+		- matchAfterReadClass ASM读取类文件后匹配规则
+		- matchMethod 目标方法匹配规则
 2. Matcher 匹配目标类，目标方法
+    - 利用Matcher快捷的组装Interceptor的Match规则
 	- Class Matcher
 	- Method Matcher
 	- Basic Matcher
