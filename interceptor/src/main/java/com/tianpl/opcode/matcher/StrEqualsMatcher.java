@@ -3,9 +3,11 @@ package com.tianpl.opcode.matcher;
 import lombok.EqualsAndHashCode;
 
 /**
- * An element matcher that checks an object's equality to another object.
+ * StrEqualsMatcher
+ *
  * @Author yu.tian@tianpl.com
  *         blog.tianpl.com
+ * @Date 17/11/21 17:43
  */
 @EqualsAndHashCode(callSuper = false)
 public class StrEqualsMatcher extends EqualityMatcher<String> {

@@ -5,10 +5,12 @@ package com.tianpl.opcode.matcher;
  *
  * @Author yu.tian@tianpl.com
  *         blog.tianpl.com
- * @Date 17/11/21 10:36
+ * @Date 17/11/20 10:36
  *
  * 匹配器模式接口
  * 用于匹配目标类或者目标方法
+ *
+ * 匹配的思想来自于bytebuddy
  */
 public interface Matcher<T> {
 

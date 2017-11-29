@@ -2,7 +2,7 @@ package com.tianpl.opcode.example.javaagent;
 
 import com.tianpl.opcode.ClassModifier;
 import com.tianpl.opcode.Interceptor;
-import com.tianpl.opcode.OpcdeException;
+import com.tianpl.opcode.InterceptorException;
 import com.tianpl.opcode.example.target.ForExample;
 import com.tianpl.opcode.example.target.ForExample1;
 import com.tianpl.opcode.matcher.ConnectorMatcher;
@@ -17,11 +17,19 @@ import java.lang.instrument.Instrumentation;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 
+/**
+ * AgentArgs
+ *
+ * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
+ *
+ * @Date 17/11/29 08:22
+ */
 public class TransformerMaker {
     public static void make(final AgentArgs agentArgs, Instrumentation instrumentation) {
         try {
             if (!AgentArgs.valida(agentArgs)) {
-                throw new OpcdeException("JavaAgent参数设置错误");
+                throw new InterceptorException("JavaAgent参数设置错误");
             }
             ConnectorMatcher<Type> readBeforeMatcher;
             switch (agentArgs.getNameMatcherRule()) {
@@ -41,7 +49,7 @@ public class TransformerMaker {
                     readBeforeMatcher = TypeMatchers.nameContains(agentArgs.getMatchRule());
                     break;
                 default:
-                    throw new OpcdeException("JavaAgent必须设置正确的代理实现方式.");
+                    throw new InterceptorException("JavaAgent必须设置正确的代理实现方式.");
             }
 
             ConnectorMatcher<ClassNode> readAfterMather = ClassMatchers.not(ClassMatchers.isInterface());

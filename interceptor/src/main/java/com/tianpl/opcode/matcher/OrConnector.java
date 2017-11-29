@@ -4,12 +4,11 @@ import lombok.EqualsAndHashCode;
 
 /**
  * OrConnector
+ * Or关系Matcher Connector
  *
  * @Author yu.tian@tianpl.com
  *         blog.tianpl.com
- * @Date 17/11/27 17:43
- *
- * A disjunction matcher which only matches an element if both represented matchers constitute a match.
+ * @Date 17/11/21 17:43
  *
  * @param <W> The type of the object that is being matched.
  */

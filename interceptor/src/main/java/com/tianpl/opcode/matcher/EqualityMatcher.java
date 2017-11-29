@@ -3,23 +3,17 @@ package com.tianpl.opcode.matcher;
 import lombok.EqualsAndHashCode;
 
 /**
- * An element matcher that checks an object's equality to another object.
+ * EqualityMatcher
  *
- * @param <T> The type of the matched entity.
+ * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
+ * @Date 17/11/20 18:32
  */
 @EqualsAndHashCode(callSuper = false)
 public class EqualityMatcher<T> extends ConnectorMatcher.AbstractConnector<T> {
 
-    /**
-     * The object that is checked to be equal to the matched value.
-     */
     protected final Object value;
 
-    /**
-     * Creates an element matcher that tests for equality.
-     *
-     * @param value The object that is checked to be equal to the matched value.
-     */
     public EqualityMatcher(Object value) {
         this.value = value;
     }

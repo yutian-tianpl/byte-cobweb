@@ -2,24 +2,22 @@ package com.tianpl.opcode.matcher;
 
 import lombok.EqualsAndHashCode;
 /**
- * AndConnector
+ * AndConnector And关系Matcher Connector
  *
- * A conjunction matcher which only matches an element if both represented matchers constitute a match.
  * @Author yu.tian@tianpl.com
  *         blog.tianpl.com
- * @Date 17/11/27 17:42
- * @param <W> The type of the object that is being matched.
+ * @Date 17/11/21 17:42
  */
 @EqualsAndHashCode(callSuper = false)
 public class AndConnector<W> extends ConnectorMatcher.AbstractConnector<W> {
 
     /**
-     * The element matchers that constitute this conjunction.
+     * And关系Matcher的两端
      */
     private final Matcher<? super W> left, right;
 
     /**
-     * Creates a new conjunction matcher.
+     * 创建一个And关系的Matcher
      *
      * @param left  The first matcher to consult for a match.
      * @param right The second matcher to consult for a match. This matcher is only consulted

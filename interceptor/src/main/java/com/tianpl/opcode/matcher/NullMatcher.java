@@ -3,9 +3,12 @@ package com.tianpl.opcode.matcher;
 import lombok.EqualsAndHashCode;
 
 /**
- * An element matcher that matches the {@code null} value.
+ * NullMatcher
+ * null匹配器
+ *
  * @Author yu.tian@tianpl.com
  *         blog.tianpl.com
+ * @Date 17/11/21 10:36
  * @param <T> The type of the matched entity.
  */
 @EqualsAndHashCode(callSuper = false)

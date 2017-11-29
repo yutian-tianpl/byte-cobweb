@@ -8,10 +8,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Interceptor
+ *
+ * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
+ * @Date 17/11/22 15:26
+ */
 public abstract class Interceptor {
     static Type type = Type.getType(Interceptor.class);
 
-    // One instance per agent. Required to fulfill the agent contract that lets several agents to be running at same time
     private static final Map<String, Interceptor> INSTANCES = new HashMap<>();
 
     private static final AtomicInteger interceptorCounter = new AtomicInteger(1);

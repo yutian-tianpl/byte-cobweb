@@ -3,6 +3,13 @@ package com.tianpl.opcode.matcher;
 import lombok.EqualsAndHashCode;
 import org.objectweb.asm.Type;
 
+/**
+ * TypeNameStartsWithMatcher
+ *
+ * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
+ * @Date 17/11/21 17:51
+ */
 @EqualsAndHashCode(callSuper = false)
 public class TypeNameStartsWithMatcher extends ConnectorMatcher.AbstractConnector<Type> {
 

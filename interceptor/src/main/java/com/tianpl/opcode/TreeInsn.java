@@ -4,6 +4,13 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.*;
 
+/**
+ * TreeInsn
+ *
+ * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
+ * @Date 17/11/25 17:26
+ */
 class TreeInsn {
     static VarInsnNode getLoadInsn(Type type, int position) {
         int opCode;
@@ -84,7 +91,6 @@ class TreeInsn {
 
         list.add(new FieldInsnNode(Opcodes.GETSTATIC, wrapper, "TYPE", "Ljava/lang/Class;"));
         return list;
-
     }
 
     static MethodInsnNode getWrapperConstructionInsn(Type type) {
@@ -130,7 +136,7 @@ class TreeInsn {
     }
 
     static VarInsnNode getStoreInsn(Type type, int position) {
-        int opCode = -1;
+        int opCode;
         switch (type.getDescriptor().charAt(0)) {
             case 'B':
                 opCode = Opcodes.ISTORE;

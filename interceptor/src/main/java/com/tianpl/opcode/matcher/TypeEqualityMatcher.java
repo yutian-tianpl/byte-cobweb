@@ -4,9 +4,11 @@ import lombok.EqualsAndHashCode;
 import org.objectweb.asm.Type;
 
 /**
- * An element matcher that checks an object's equality to another object.
+ * TypeEqualityMatcher
+ *
  * @Author yu.tian@tianpl.com
  *         blog.tianpl.com
+ * @Date 17/11/21 17:43
  */
 @EqualsAndHashCode(callSuper = false)
 public class TypeEqualityMatcher extends EqualityMatcher<Type> {

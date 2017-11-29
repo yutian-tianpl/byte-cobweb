@@ -3,9 +3,13 @@ package com.tianpl.opcode.matcher;
 import lombok.EqualsAndHashCode;
 
 /**
- * An element matcher that reverses the matching result of another matcher.
+ * NegatingMatcher
+ *
+ * not关系matcher
+ *
  * @Author yu.tian@tianpl.com
  *         blog.tianpl.com
+ * @Date 17/11/21 10:36
  * @param <T> The type of the matched entity.
  */
 @EqualsAndHashCode(callSuper = false)

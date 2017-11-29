@@ -3,10 +3,10 @@ package com.tianpl.opcode.matcher;
 import lombok.EqualsAndHashCode;
 
 /**
- * An element matcher that checks an object's equality to another object.
- *
+ * StrContainsMatcher
  * @Author yu.tian@tianpl.com
  *         blog.tianpl.com
+ * @Date 17/11/21 17:43
  */
 @EqualsAndHashCode(callSuper = false)
 public class StrContainsMatcher extends ConnectorMatcher.AbstractConnector<String> {
@@ -17,7 +17,7 @@ public class StrContainsMatcher extends ConnectorMatcher.AbstractConnector<Strin
     private final String value;
 
     /**
-     * Creates an element matcher that tests for equality.
+     * 创建一个String类型的包含关系matcher
      *
      * @param value The object that is checked to be equal to the matched value.
      */

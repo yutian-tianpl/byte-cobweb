@@ -8,7 +8,11 @@ import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 方法修改器
+ * ClassModifier 方法修改器
+ *
+ * @Author yu.tian@tianpl.com
+ *         blog.tianpl.com
+ * @Date 17/11/23 16:26
  */
 public class MethodModifier {
     /***

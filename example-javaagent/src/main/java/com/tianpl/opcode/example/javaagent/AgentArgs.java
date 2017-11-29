@@ -1,6 +1,6 @@
 package com.tianpl.opcode.example.javaagent;
 
-import com.tianpl.opcode.OpcdeException;
+import com.tianpl.opcode.InterceptorException;
 
 import java.util.Arrays;
 import java.util.Optional;
@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * @Author yu.tian@tianpl.com
  *         blog.tianpl.com
  *
- * @Date 17/11/15 18:22
+ * @Date 17/11/28 18:22
  */
 public class AgentArgs {
     private static final String ARG_SPLIT_BY = ";";
@@ -60,15 +60,15 @@ public class AgentArgs {
 
     static AgentArgs of(String agentArgsStr) {
         if (agentArgsStr == null || agentArgsStr.length() == 0) {
-            throw new OpcdeException("JavaAgent必须设置参数.");
+            throw new InterceptorException("JavaAgent必须设置参数.");
         }
         String[] args = agentArgsStr.split(ARG_SPLIT_BY);
         if (args.length != 1 && args.length != 2) {
-            throw new OpcdeException("JavaAgent参数数量不正确.");
+            throw new InterceptorException("JavaAgent参数数量不正确.");
         }
         Optional<NameMatcherRule> optionalMatchRuleAs = NameMatcherRule.of(args[0]);
         if (!optionalMatchRuleAs.isPresent()) {
-            throw new OpcdeException("JavaAgent必须设置正确的代理目标类匹配方式方式.");
+            throw new InterceptorException("JavaAgent必须设置正确的代理目标类匹配方式方式.");
         }
         AgentArgs agentArgs = new AgentArgs(optionalMatchRuleAs.get());
         switch (optionalMatchRuleAs.get()) {
@@ -79,12 +79,12 @@ public class AgentArgs {
             case NAMED:
                 if (args.length != 2) {
                     System.out.println(ARGS_RULES);
-                    throw new OpcdeException("JavaAgent必须设置正确的代理目标类匹配方式方式.");
+                    throw new InterceptorException("JavaAgent必须设置正确的代理目标类匹配方式方式.");
                 }
                 agentArgs.setMatchRule(args[1]);
                 break;
             default:
-                throw new OpcdeException("未支持目标类型匹配规则.");
+                throw new InterceptorException("未支持目标类型匹配规则.");
         }
         return agentArgs;
     }
