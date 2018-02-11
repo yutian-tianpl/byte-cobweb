@@ -76,8 +76,8 @@ public abstract class Interceptor {
         }
         ALREADY_NOTIFIED_FLAG.set(true);
         try {
-            doOnFinish(source, null, executionId);
             doOnThrowableThrown(source, throwable, executionId);
+            doOnFinish(source, null, executionId);
         } catch (Throwable th) {
             th.printStackTrace(System.err);
         }
@@ -95,8 +95,8 @@ public abstract class Interceptor {
         }
         ALREADY_NOTIFIED_FLAG.set(true);
         try {
-            doOnFinish(source, null, executionId);
             doOnThrowableSurprise(source, throwable, executionId);
+            doOnFinish(source, null, executionId);
         } catch (Throwable th) {
             th.printStackTrace(System.err);
         } finally {
